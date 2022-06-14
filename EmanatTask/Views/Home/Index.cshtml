@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EmanatTask.Models.Search>
+
+
+
+<div class="container border-bottom py-3">
+    <h1>Movies</h1>
+</div>
+
+<div class="container-fluid py-3 style=" background-color:#000000"">
+    <div class="row justify-content-between">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-2 col-md-3 col-5 mx-1 my-3 p-0" style="background-color:#18363ce0">
+                <div class="poster"> <img src="@item.Poster" /> </div>
+                <div class="content p-2">
+                    <p style="color:white">@item.imdb</p>
+                    <a asp-action="Details" asp-route-imdbId="@item.imdbID" style="color:white">@item.Title</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
